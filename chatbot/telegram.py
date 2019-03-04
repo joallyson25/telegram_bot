@@ -1,7 +1,7 @@
 import telepot
 from chatbot import Chatbot
 
-telegram = telepot.Bot("692670820:AAHpx7c_83kcQoYX0JQ_F-8V5ZWEncO_IHU")
+telegram = telepot.Bot("license provide from Telegram")
 bot = Chatbot("RedX")  # Cria um novo bot e dá nome a ele
 
 # Função para puxar as novas mensagens
