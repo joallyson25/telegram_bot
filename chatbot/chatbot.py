@@ -64,7 +64,7 @@ class Chatbot():
             resp = frase
             self.frases[self.chave] = resp
             self.gravaMemoria()
-            return 'Blz, aprendido! \u263a'  # Salvar msg na mem (arquivo .json)
+            return 'Beleza, aprendido! \u263a'  # Salvar msg na mem (arquivo .json)
         try:
             resp = eval(frase)
             return str(resp)
@@ -114,16 +114,14 @@ class Chatbot():
     e no final add a frase na var histórico
     """
     def fala(self, frase):
-        if 'execut' in frase:
+        if 'executar' in frase:
             plataforma = sys.platform
-            # comando = frase.replace('executa ', '')  # Elimina 'executa' e copia o resto da frase
-            comando = frase[8:]
+            comando = frase.replace('executar ', '')  # Elimina 'executa' e copia o resto da frase
             if 'win' in plataforma:
-                print('é comando windows!')  # Test
                 os.startfile(f'{comando}')
             if 'linux' in plataforma:
                 try:
-                    s.Popen(comando)  # Executar aplicação do linux
+                    s.Popen(comando.lower())  # Executar aplicação do linux
                 except FileNotFoundError:
                     s.Popen(['xdg-open', comando])  # Abrir sites
         else:
